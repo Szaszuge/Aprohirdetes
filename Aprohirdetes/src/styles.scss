@@ -1,7 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Alapértelmezett betűtípus az egész alkalmazásra */
+* {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* A betűtípus stílusának alkalmazása a body-ra is */
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Egyéb stílusok (azokat változatlanul hagyhatod) */
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35vh;
+  }
+  
+  .login-card {
+    width: 400px;
+    padding: 20px;
+  }
+  
+  a.tit {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3f51b5;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  a.tit:hover {
+    color: #f44336;
+    transform: scale(1.1);
+  }
+  
+  a.tit:active {
+    color: #4caf50;
+    transform: scale(1);
+  }
+  
+  /* Reszponzív dizájn a mobil nézethez */
+  @media (max-width: 600px) {
+    a.tit {
+      font-size: 1.2rem;
+    }
+  }
+  
