@@ -1,22 +1,51 @@
+/* Már meglévő stílusok, amik nem változnak */
 .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35vh;
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+}
+
+/* Alap stílusok az "Apróhirdetések" linkhez */
+a.tit {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3f51b5; /* Kék szín alapértelmezett */
+  transition: all 0.3s ease; /* Animáció a stílusok váltásakor */
+  text-decoration: none;
+}
+
+/* Hover hatás */
+a.tit:hover {
+  color: #f44336; /* Piros szín, amikor ráhoverelünk */
+  transform: scale(1.1); /* Kisebb növelés a kattintás előtt */
+}
+
+/* Kattintott (aktív) állapot */
+a.tit:active {
+  color: #4caf50; /* Zöld szín kattintáskor */
+  transform: scale(1); /* Visszaáll a normál méretre */
+}
+
+/* Reszponzív dizájn a mobil nézethez */
+@media (max-width: 600px) {
+  a.tit {
+    font-size: 1.2rem; /* Mobil nézetben kisebb font */
   }
-  
-  .button-group {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 35vh;
-  }
-  
-  .login-card {
-    width: 400px;
-    padding: 20px;
-  }
+}
