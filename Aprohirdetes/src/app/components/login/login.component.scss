@@ -1,0 +1,22 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35vh;
+  }
+  
+  .login-card {
+    width: 400px;
+    padding: 20px;
+  }
