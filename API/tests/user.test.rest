@@ -1,0 +1,13 @@
+### //register POST http://localhost:3000/api/users/register Content-Type: application/json
+
+{
+    "name": "Niga Sandor", "email": "otott-kovacsmate@turr.hu", "password": "123456"
+
+}
+
+### // user login POST http://localhost:3000/api/users/login Content-Type: application/json
+
+{
+    "email": "otott-kovacsmate@turr.hu", "password": "123456"
+
+}
