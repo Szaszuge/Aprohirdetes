@@ -8,6 +8,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { ApiService } from '../../services/api.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -28,4 +30,11 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class LoginComponent {
 
+  constructor(private api:ApiService, private auth: AuthService){}
+
+  login(){
+    this.api.login().subscribe(
+      this.auth.login(token)
+    )
+  }
 }

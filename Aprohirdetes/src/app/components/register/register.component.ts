@@ -8,6 +8,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { ApiService } from '../../services/api.service';
+import { User } from '../../interfaces/user';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -24,6 +27,36 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
+
 export class RegisterComponent {
 
+  constructor(private api: ApiService, private snackbar: MatSnackBar){}
+
+  user:User = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
+  register(){
+    this.api.registration(this.user).subscribe({
+      next: (res:any)=>{
+        if (res.success){
+          this.openSnackBar('Sikeres regisztráció!', 'OK');
+        }
+        else
+        {
+          this.openSnackBar(res.message, 'OK');
+        }
+      },
+      error: (err)=>{
+        console.log(err)
+        this.openSnackBar(err.error.message, 'OK');
+      }
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackbar.open(message, action);
+  }
 }

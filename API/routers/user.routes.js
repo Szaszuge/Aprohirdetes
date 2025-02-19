@@ -14,6 +14,6 @@ router.post('/register', userController.register);
 router.post('/login', userController.login);
 
 // get all users
-router.get('/', authMiddleware,  userController.getAllUsers);
+router.get('/', authMiddleware, userController.getAllUsers);
 
 module.exports = router;
