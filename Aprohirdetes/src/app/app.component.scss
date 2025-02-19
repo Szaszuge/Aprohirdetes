@@ -8,7 +8,9 @@
 .button-group {
   display: flex;
   gap: 10px;
+  color: #3f51b5;
 }
+
 
 .container {
   display: flex;
@@ -48,4 +50,14 @@ a.tit:active {
   a.tit {
     font-size: 1.2rem; /* Mobil nézetben kisebb font */
   }
+}
+
+// Kijelentkezés gomb piros
+#red{
+  background-color: red;
+  color: white;
+}
+
+#blue{
+  color: #3f51b5;
 }

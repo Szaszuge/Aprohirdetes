@@ -1,13 +1,13 @@
 <mat-toolbar class="tb toolbar">
-  <a class="tit" routerLink="/home" style="text-decoration: none; color: inherit;">
-    Apróhirdetések
+  <a class="tit" routerLink="/home" style="text-decoration: none; color: #3f51b5;">
+    Apróhirdetés Portál
   </a>
   <span class="example-spacer"></span>
   <div class="button-group">
-    <button mat-stroked-button class="rb" routerLink="hirdetesek">Apróhirdetések</button>
-    <button *ngIf="!isLoggedIn" mat-stroked-button class="lb" routerLink="login">Bejelentkezés</button>
-    <button *ngIf="!isLoggedIn" mat-stroked-button class="rb" routerLink="register">Regisztráció</button>
-    <button *ngIf="isLoggedIn" mat-stroked-button class="rb" (click)="logout()">Kijelentkezés</button>
+    <button mat-stroked-button class="rb" routerLink="hirdetesek" id="blue">Apróhirdetések</button>
+    <button *ngIf="!isLoggedIn" mat-stroked-button class="lb" routerLink="login" id="blue">Bejelentkezés</button>
+    <button *ngIf="!isLoggedIn" mat-stroked-button class="rb" routerLink="register" id="blue">Regisztráció</button>
+    <button  *ngIf="isLoggedIn" mat-stroked-button class="rb" (click)="logout()" id="red">Kijelentkezés</button>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router'; // 🔹 Router importálása
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -22,7 +23,7 @@ export class AppComponent {
   title = 'Aprohirdetes';
   isLoggedIn = false;
 
-  constructor(private authService: AuthService, private snackbar: MatSnackBar) {}
+  constructor(private authService: AuthService, private snackbar: MatSnackBar, private router: Router) {} // 🔹 Router injektálása
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(status => {
@@ -33,6 +34,7 @@ export class AppComponent {
   logout() {
     this.authService.logout();
     this.openSnackBar('Sikeres kijelentkezés!', 'OK');
+    this.router.navigate(['/home']); // 🔹 Redirect kijelentkezés után
   }
 
   openSnackBar(message: string, action: string) {

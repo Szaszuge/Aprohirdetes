@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ApiService } from '../../services/api.service';
 import { AuthService } from '../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router'; // 🔹 Router importálása
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent {
 
-  constructor(private api: ApiService, private auth: AuthService, private snackbar: MatSnackBar) {}
+  constructor(
+    private api: ApiService, 
+    private auth: AuthService, 
+    private snackbar: MatSnackBar,
+    private router: Router // 🔹 Router injektálása
+  ) {}
 
   user = {
     name: '',
@@ -43,6 +49,7 @@ export class LoginComponent {
         if (res.success) {
           this.auth.login(res.token);
           this.openSnackBar('Sikeres bejelentkezés!', 'OK');
+          this.router.navigate(['/hirdetesek']); // 🔹 Redirect bejelentkezés után
         } else {
           this.openSnackBar(res.message, 'OK');
         }
@@ -55,6 +62,6 @@ export class LoginComponent {
   }
 
   openSnackBar(message: string, action: string) {
-    this.snackbar.open(message, action);
+    this.snackbar.open(message, action, { duration: 3000 });
   }
 }
