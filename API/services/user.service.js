@@ -8,8 +8,8 @@ exports.registerUser = async (name, email, password) => {
     return user;
 }
 
-exports.loginUser = async (email, password) => {
-    const user = await User.findOne({where: { email }});
+exports.loginUser = async (name, password) => {
+    const user = await User.findOne({where: { name }});
     if (!user) throw new Error('Nem regisztrált felhasználó!');
     if (! await bcrypt.compare(password, user.password)) throw new Error('Hibás jelszó!');
 

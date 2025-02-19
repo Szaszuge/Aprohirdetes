@@ -3,12 +3,12 @@
     <h2 class="login-title">Bejelentkezés</h2>
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Felhasználónév</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="user.name">
     </mat-form-field>
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Jelszó</mat-label>
-      <input matInput type="password">
+      <input matInput type="password" [(ngModel)]="user.password">
     </mat-form-field>
-    <button mat-raised-button color="primary" class="full-width">Bejelentkezés</button>
+    <button mat-raised-button color="primary" class="full-width" (click)="login()">Bejelentkezés</button>
   </div>
 </div>

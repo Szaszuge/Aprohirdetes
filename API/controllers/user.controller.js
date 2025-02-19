@@ -22,11 +22,11 @@ exports.register = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
     try{
-        const { email, password } = req.body;
-        if(!email || !password){
+        const { name, password } = req.body;
+        if(!name || !password){
             return res.status(400).json({success: false, message: 'Hiányzó adatok!'});
         }
-        const user = await userService.loginUser(email, password);
+        const user = await userService.loginUser(name, password);
       
         res.status(200).json({success: true, user: user, token: user.token});
        
