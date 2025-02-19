@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from '../footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,9 @@ import { FooterComponent } from '../footer/footer.component';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    FooterComponent],
+    FooterComponent,
+    RouterModule
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
