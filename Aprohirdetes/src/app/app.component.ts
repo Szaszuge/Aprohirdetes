@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,7 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

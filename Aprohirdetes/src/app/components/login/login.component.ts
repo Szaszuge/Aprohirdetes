@@ -33,8 +33,8 @@ export class LoginComponent {
   constructor(private api:ApiService, private auth: AuthService){}
 
   login(){
-    this.api.login().subscribe(
+    /*this.api.login().subscribe(
       this.auth.login(token)
-    )
+    )*/
   }
 }
