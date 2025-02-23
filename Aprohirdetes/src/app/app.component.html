@@ -5,6 +5,7 @@
   <span class="example-spacer"></span>
   <div class="button-group">
     <button mat-stroked-button class="rb" routerLink="hirdetesek" id="blue">Apróhirdetések</button>
+    <button *ngIf="isLoggedIn" mat-stroked-button class="lb" routerLink="hirdeteskezeles" id="blue">Hirdetések kezelése</button>
     <button *ngIf="!isLoggedIn" mat-stroked-button class="lb" routerLink="login" id="blue">Bejelentkezés</button>
     <button *ngIf="!isLoggedIn" mat-stroked-button class="rb" routerLink="register" id="blue">Regisztráció</button>
     <button  *ngIf="isLoggedIn" mat-stroked-button class="rb" (click)="logout()" id="red">Kijelentkezés</button>
